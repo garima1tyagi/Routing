@@ -20,6 +20,9 @@ class Nav extends Component {
             <Link to="contact">
             <li>Contact</li>
             </Link>
+            <Link to="topics">
+            <li>Topics</li>
+            </Link>
 
 
         </ul>
