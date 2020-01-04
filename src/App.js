@@ -16,17 +16,10 @@ class App extends Component {
       <Route path= "/" exact>
       
       </Route> 
-      <Route path= "/about">
-      <About />
-      </Route> 
-
-      <Route path= "/setting">
-      <Setting />
-      </Route> 
-      
-      <Route path= "/contact">
-      <Contact />
-      </Route> 
+      <Route path= "/about" component={About} />
+      <Route path= "/setting" component={Setting} />
+      <Route path= "/contact" component={Contact} />
+  
       </Switch>
     </div>
     </Router>
