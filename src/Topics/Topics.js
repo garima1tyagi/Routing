@@ -7,8 +7,32 @@ return (
     <div>
         <h3>{topic.name}</h3>
         <p>{topic.description}</p>
+        <ul>
+        {topic.resources.map((sub) => (
+          <li key={sub.id}>
+          <Link to={`/topics/${match.params.topicId}/${sub.id}`}>
+          {sub.name }
+          </Link>
+          </li>
+         ) )}
+        </ul>
+        <Route path={`/topics/:topicId/:subId`} component={Resources} />
     </div>
 )
+}
+
+function Resources ({match}){
+  const topic = topics.find(({id}) => id === match.params.topicId)
+  .resources.find(({id}) => id === match.params.subId)
+
+  return (
+    <div>
+      <h3>{topic.name}</h3>
+      <h3>{topic.description}</h3>
+      <a href={topic.url}>More Info... </a>
+      
+      </div>
+  )
 }
 
 const topics = [
